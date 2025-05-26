@@ -32,6 +32,17 @@ db.getConnection()
     console.error('Error connecting to database:', err);
   });
 
+// Test endpoint
+app.get('/api/test', (req, res) => {
+  res.json({ 
+    success: true, 
+    message: 'API test endpoint is working!',
+    env: process.env.NODE_ENV,
+    dbHost: process.env.DB_HOST ? 'DB_HOST is set' : 'DB_HOST is not set',
+    corsOrigin: process.env.CORS_ORIGIN || 'CORS_ORIGIN not set'
+  });
+});
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);

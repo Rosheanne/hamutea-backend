@@ -9,7 +9,7 @@ const corsOptions = {
     allowedHeaders: ['Content-Type', 'Authorization']
   },
   production: {
-    origin: process.env.CORS_ORIGIN || 'https://hamutea-frontend.vercel.app',
+    origin: process.env.CORS_ORIGIN || 'https://hamutea.vercel.app',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
