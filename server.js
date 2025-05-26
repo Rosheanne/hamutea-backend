@@ -43,6 +43,22 @@ app.get('/api/test', (req, res) => {
   });
 });
 
+// Test login endpoint
+app.post('/api/test-login', (req, res) => {
+  console.log('Test login request received:', req.body);
+  res.json({
+    success: true,
+    message: 'Test login successful',
+    token: 'test-token-123',
+    data: {
+      id: 1,
+      name: 'Test User',
+      email: req.body.email || 'test@example.com',
+      role: 'admin'
+    }
+  });
+});
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
